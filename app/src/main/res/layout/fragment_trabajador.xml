@@ -6,9 +6,33 @@
     tools:context=".Fragments.TrabajadorFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:layout_height="match_parent">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Envios en asignados" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:paddingLeft="50dp"
+            android:text="Sin envios asignados"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:text="Envios en curso"
+            android:layout_height="40dp"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:paddingLeft="50dp"
+            android:text="Sin envios en curso"
+            />
+
+    </LinearLayout>
 </FrameLayout>

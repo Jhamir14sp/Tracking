@@ -47,7 +47,8 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
     public static String nombres2="";
     public static String email2="";
     public static String password2="";
-
+    private final int DURACION_SPLASH = 3000;
+    public static int veces=0;
     FirebaseAuth.AuthStateListener mAuthListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +59,19 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
         email= (EditText)findViewById(R.id.txtEmail);
         pass= (EditText)findViewById(R.id.txtPassword);
         rq= Volley.newRequestQueue(getBaseContext());
+        login.setEnabled(true);
+        veces=0;
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                iniciarSesion();
+                if(veces<4) {
+                    iniciarSesion();
+                    veces = veces + 1;
+                }else{
+                    Toast.makeText(getBaseContext(),"Espere un momento",Toast.LENGTH_LONG).show();
+                    login.setEnabled(false);
+
+                }
             }
         });
         cancel.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +86,7 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(getBaseContext(),"Datos incorretos"+error.toString(),Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(),"Ingresó datos incorrectos intente nuevamente",Toast.LENGTH_LONG).show();
     }
 
     @Override

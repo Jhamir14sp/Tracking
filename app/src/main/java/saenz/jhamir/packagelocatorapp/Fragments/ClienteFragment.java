@@ -31,11 +31,10 @@ public class ClienteFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         vista=inflater.inflate(R.layout.fragment_cliente, container, false);
-      /*  agregar=vista.findViewById(R.id.btn);
+       agregar=vista.findViewById(R.id.btn);
         listView=vista.findViewById(R.id.lista);
         List<String> names= new ArrayList<String>();
-        names.add("jahmir :'v");
-        names.add("enzo");
+
         ArrayAdapter<String> adapter=new ArrayAdapter<String >(getContext(),android.R.layout.simple_list_item_1,names);
         listView.setAdapter(adapter);
 
@@ -43,11 +42,11 @@ public class ClienteFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 List<String> names= new ArrayList<String>();
-                names.add("nuevo :'v");
+                names.add("Envio en curso\nPelota adidas\nAv. Snt. Luisa 548\nJhon Torres");
                 ArrayAdapter<String> adapter=new ArrayAdapter<String >(getContext(),android.R.layout.simple_list_item_1,names);
                 listView.setAdapter(adapter);
             }
-        });*/
+        });
         return vista;
     }
 }
