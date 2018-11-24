@@ -11,6 +11,8 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:textSize="30dp"
-        android:text="info about the company you know :V" />
+        android:text="Aplicativo desarrollado por los estudiantes del curso de videojuegos y aplicaciones móviles de la Universidad Privada del Norte"
+
+        />
 
 </FrameLayout>

@@ -82,6 +82,4 @@ public class RutaFragment extends SupportMapFragment implements OnMapReadyCallba
         mMap.animateCamera(zoom);
     }
 
-
-
 }
