@@ -65,11 +65,13 @@ public class EditarPerfilFragment extends Fragment implements Response.Listener<
                 c=mail.getText().toString();
                 p1=pwd1.getText().toString();
                 p2=pwd2.getText().toString();
-                if(p1.length()==0 && p2.length()==0){
-                   Toast.makeText(getContext(),"Sin cambios en la contraseña",Toast.LENGTH_SHORT).show();
-               }else if(p1.length()>1&&p2.length()>1) {
+                if(n.length()==0&&p1.length()==0&&p2.length()==0){
+                    Toast.makeText(getContext(),"No se realizo ninguna modificación",Toast.LENGTH_SHORT).show();
+                }else if(n.length()>0&&p1.length()==0 && p2.length()==0){
+                   Toast.makeText(getContext(),"Se actualizo el nombre de usuario correctamente",Toast.LENGTH_SHORT).show();
+               }else if(n.length()>1&&p1.length()>1&&p2.length()>1) {
                    if (p1.equals(p2)) {
-                       Toast.makeText(getContext(), "Contraseña coinciden", Toast.LENGTH_SHORT).show();
+                       Toast.makeText(getContext(), "Cambios realizados satisfactoriamente", Toast.LENGTH_SHORT).show();
                    }else{
                        Toast.makeText(getContext(), "Contraseña no coinciden", Toast.LENGTH_SHORT).show();
                        }
