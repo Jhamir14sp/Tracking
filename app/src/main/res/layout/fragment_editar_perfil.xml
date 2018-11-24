@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DBD6D6"
+    tools:context=".Fragments.EditarPerfilFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/users"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginTop="85dp">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/user"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Nombre: "
+                />
+            <EditText
+                android:id="@+id/txtNombre"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:hint="Nombre de usuario"
+                android:inputType="text"
+                android:textSize="16dp"
+                android:layout_marginLeft="40dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/users2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/users">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/email"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Email: "
+                />
+            <EditText
+                android:id="@+id/txtEmail"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="58dp"
+                android:hint="Ingrese correo"
+                android:inputType="textEmailAddress"
+                android:textSize="16dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/users3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/users2">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/password"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Contraseña: "
+                />
+            <EditText
+                android:id="@+id/txtPassword"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:hint="Ingrese contraseña"
+                android:inputType="textPassword"
+                android:textSize="16dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/users4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/users3">
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="50dp"
+                android:text="Confirmar\ncontraseña: "
+                android:textSize="16dp" />
+            <EditText
+                android:id="@+id/txtPassword2"
+                android:layout_marginTop="6dp"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:hint="Confirme contraseña"
+                android:inputType="textPassword"
+                android:textSize="16dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/users4">
+            <Button
+                android:id="@+id/confirm"
+                android:layout_width="150dp"
+                android:layout_centerHorizontal="true"
+                android:background="#F9A31A"
+                android:textColor="#ffff"
+                android:text="Confirmar"
+                android:textSize="17dp"
+                android:layout_marginTop="30dp"
+
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/cancel"
+                android:layout_marginTop="30dp"
+                android:layout_width="150dp"
+                android:layout_centerHorizontal="true"
+                android:background="#F9A31A"
+                android:textColor="#FFFF"
+                android:text="Cancelar"
+                android:textSize="17dp"
+                android:layout_marginLeft="15dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</FrameLayout>

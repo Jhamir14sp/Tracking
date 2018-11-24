@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Package Locator App</string>
+    <string name="facebook_app_id">280025752717904</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment"></string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps_prueba">Map</string>
+</resources>
