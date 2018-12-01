@@ -80,6 +80,7 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
     @Override
     public void onErrorResponse(VolleyError error) {
         Toast.makeText(getBaseContext(),"Ingresó datos incorrectos intente nuevamente",Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(),""+error,Toast.LENGTH_LONG).show();
     }
 
     @Override

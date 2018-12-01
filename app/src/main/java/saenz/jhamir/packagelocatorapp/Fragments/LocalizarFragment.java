@@ -6,6 +6,7 @@ import android.app.DownloadManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Location;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
@@ -105,33 +106,42 @@ public class LocalizarFragment extends SupportMapFragment implements OnMapReadyC
         Location(googleMap);
         float zoom = 16;
 
-        double lt=Double.valueOf(ClienteFragment.latW).doubleValue();
-        double ln=Double.valueOf(ClienteFragment.lngW).doubleValue();
-        final LatLng punto1=new LatLng(ln,lt);
-        double latW=Double.valueOf(ClienteFragment.lng).doubleValue();
-        double lngW=Double.valueOf(ClienteFragment.lat).doubleValue();
-        final LatLng punto2=new LatLng(latW,lngW);
-String url2="https://maps.googleapis.com/maps/api/directions/json?origin="+lt+","+ln+"&destination="+latW+","+lngW+"&key=AIzaSyBibI3_dZFiuPuHn-MiV8iX-RTFDyETJNA";
-        RequestQueue queue=Volley.newRequestQueue(getActivity());
-        StringRequest stringRequest=new StringRequest(Request.Method.GET, url2, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    jso=new JSONObject(response);
-                    trazarRuta(jso);
-                    //Log.i("jsonRuta",""+response);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
 
+        mMap.setMyLocationEnabled(true);
+        mMap.setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
+            @Override
+            public void onMyLocationChange(Location location) {
+
+
+                double lt = Double.valueOf(ClienteFragment.latW).doubleValue();
+                double ln = Double.valueOf(ClienteFragment.lngW).doubleValue();
+                final LatLng punto1 = new LatLng(ln, lt);
+                double latW = Double.valueOf(ClienteFragment.lng).doubleValue();
+                double lngW = Double.valueOf(ClienteFragment.lat).doubleValue();
+                final LatLng punto2 = new LatLng(latW, lngW);
+                String url2 = "https://maps.googleapis.com/maps/api/directions/json?origin=" + lt + "," + ln + "&destination=" + latW + "," + lngW + "&key=AIzaSyBibI3_dZFiuPuHn-MiV8iX-RTFDyETJNA";
+                RequestQueue queue = Volley.newRequestQueue(getActivity());
+                StringRequest stringRequest = new StringRequest(Request.Method.GET, url2, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            jso = new JSONObject(response);
+                            trazarRuta(jso);
+                            //Log.i("jsonRuta",""+response);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+                queue.add(stringRequest);
             }
         });
-        queue.add(stringRequest);
-        }
+    }
     public void ubicarPaquete(){
         String correo;
         correo= ClienteFragment.worker;
